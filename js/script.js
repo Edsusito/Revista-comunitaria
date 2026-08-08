@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const escala = 1 + (progreso * 0.03);
             contenidoPortada.style.transform = `scale(${escala})`;
             
-            // Efecto de luz cálida que se intensifica
             const luz = document.querySelector('.luz-cálida');
             if (luz) {
                 luz.style.opacity = 0.6 + (progreso * 0.4);
@@ -67,19 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (botonMusica) {
         botonMusica.addEventListener('click', function() {
             if (!musicaActiva) {
-                // Crear audio con sonido ambiental (río/pájaros)
                 try {
                     audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
                     audio.loop = true;
                     audio.volume = 0.2;
-                    audio.play().catch(() => {
-                        // Si falla, no pasa nada
-                    });
+                    audio.play().catch(() => {});
                     musicaActiva = true;
                     botonMusica.classList.add('activo');
                     botonMusica.innerHTML = '🔊';
                 } catch(e) {
-                    // Si no se puede cargar, solo cambiamos visualmente
                     musicaActiva = true;
                     botonMusica.classList.add('activo');
                     botonMusica.innerHTML = '🔊';

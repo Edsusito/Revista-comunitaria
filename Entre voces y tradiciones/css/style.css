@@ -1,0 +1,697 @@
+/* ============================================
+   ESTILOS PRINCIPALES - ENTRE VOCES Y TRADICIONES
+   VALLEDUPAR - EXPERIENCIA SENSORIAL
+   ============================================ */
+
+/* ---------- RESET Y CONFIGURACIÓN ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+    background-color: #faf6ef;
+    color: #2c2c2c;
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+body.cargado {
+    opacity: 1;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ==========================================
+   BOTÓN DE MÚSICA
+   ========================================== */
+.boton-musica {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(26, 58, 42, 0.85);
+    color: #faf8f5;
+    border: 1px solid #c9a96e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(26, 58, 42, 0.3);
+    backdrop-filter: blur(4px);
+}
+
+.boton-musica:hover {
+    transform: scale(1.1);
+    background: rgba(26, 58, 42, 1);
+    border-color: #d4b87a;
+    box-shadow: 0 8px 30px rgba(26, 58, 42, 0.5);
+}
+
+.boton-musica.activo {
+    background: rgba(201, 169, 110, 0.85);
+    border-color: #d4b87a;
+}
+
+/* ==========================================
+   ELEMENTOS FLOTANTES
+   ========================================== */
+.flotante {
+    position: absolute;
+    z-index: 1;
+    font-size: 28px;
+    opacity: 0.15;
+    animation: flotar 12s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.nota-1 {
+    top: 15%;
+    left: 8%;
+    animation-delay: 0s;
+    font-size: 35px;
+}
+
+.nota-2 {
+    bottom: 25%;
+    right: 10%;
+    animation-delay: 4s;
+    font-size: 30px;
+}
+
+.hoja-1 {
+    top: 40%;
+    right: 5%;
+    animation-delay: 2s;
+    font-size: 32px;
+}
+
+.hoja-2 {
+    bottom: 40%;
+    left: 5%;
+    animation-delay: 6s;
+    font-size: 28px;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.15;
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg) scale(1.1);
+        opacity: 0.2;
+    }
+    75% {
+        transform: translateY(20px) rotate(-5deg) scale(0.9);
+        opacity: 0.1;
+    }
+}
+
+/* ==========================================
+   LUZ CÁLIDA - EFECTO ATARDECER
+   ========================================== */
+.luz-cálida {
+    position: absolute;
+    bottom: -10%;
+    left: -20%;
+    width: 140%;
+    height: 80%;
+    background: radial-gradient(ellipse at center bottom, 
+        rgba(201, 169, 110, 0.15) 0%, 
+        rgba(201, 169, 110, 0.03) 40%, 
+        transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+    animation: brillo 6s ease-in-out infinite alternate;
+}
+
+@keyframes brillo {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* ==========================================
+   NÚMEROS DE SECCIÓN (ESTILO REVISTA)
+   ========================================== */
+.seccion-numero {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #c9a96e;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   LÍNEAS DECORATIVAS DORADAS
+   ========================================== */
+.linea-dorada {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+    margin: 20px auto 30px;
+    opacity: 0.6;
+}
+
+.linea-dorada-izquierda {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #c9a96e, transparent);
+    margin: 15px 0 25px;
+    opacity: 0.6;
+}
+
+/* ==========================================
+   TEXTURA DE FONDO SUTIL
+   ========================================== */
+.textura-papel {
+    background-image: 
+        radial-gradient(ellipse at 20% 50%, rgba(201, 169, 110, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse at 80% 50%, rgba(201, 169, 110, 0.04) 0%, transparent 70%),
+        repeating-linear-gradient(45deg, rgba(201, 169, 110, 0.01) 0px, rgba(201, 169, 110, 0.01) 2px, transparent 2px, transparent 8px);
+}
+
+/* ==========================================
+   PALABRA ARHUACA
+   ========================================== */
+.palabra-wayuu {
+    font-size: 16px;
+    color: #c9a96e;
+    margin-top: 35px;
+    font-style: italic;
+    letter-spacing: 3px;
+    font-family: 'Arial', sans-serif;
+    opacity: 0.8;
+}
+
+.wayuu-footer {
+    font-size: 14px;
+    color: #a08a72;
+    margin-top: 20px;
+    letter-spacing: 3px;
+    font-style: italic;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ==========================================
+   CITA DESTACADA
+   ========================================== */
+.cita-destacada {
+    max-width: 700px;
+    margin: 50px auto 0;
+    padding: 35px 45px;
+    border-left: 3px solid #c9a96e;
+    background: rgba(201, 169, 110, 0.07);
+    border-radius: 0 8px 8px 0;
+    position: relative;
+}
+
+.cita-destacada::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 60px;
+    color: #c9a96e;
+    opacity: 0.2;
+    font-family: 'Georgia', serif;
+}
+
+.cita-destacada blockquote {
+    font-size: 22px;
+    font-style: italic;
+    color: #1a3a2a;
+    line-height: 1.7;
+    font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.cita-destacada .autor-cita {
+    display: block;
+    margin-top: 12px;
+    font-size: 15px;
+    font-style: normal;
+    color: #7a7a7a;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* ---------- SECCIÓN 1: PORTADA ---------- */
+#portada {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    perspective: 1px;
+    background: linear-gradient(135deg, rgba(26, 58, 42, 0.4) 0%, rgba(45, 90, 61, 0.25) 50%, rgba(61, 107, 79, 0.15) 100%);
+}
+
+#portada::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/portada.jpeg') center center / cover no-repeat;
+    opacity: 1;
+    filter: brightness(0.7) saturate(1.1);
+    animation: zoomIn 20s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.contenido-portada {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.subtitulo-pequeno {
+    font-size: 13px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #d4b87a;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+
+#portada h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: 3px;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    font-family: 'Playfair Display', 'Georgia', serif;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 18px;
+    color: #d4b87a;
+    margin-top: 10px;
+    letter-spacing: 6px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+}
+
+.frase {
+    font-size: 20px;
+    color: #f0e8dd;
+    margin-top: 25px;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+}
+
+/* ---------- SECCIÓN 2: REVISTA COMUNITARIA ---------- */
+#revista-comunitaria {
+    padding: 100px 0;
+    background: #faf6ef;
+}
+
+#revista-comunitaria .contenedor {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.revista-izquierda {
+    flex: 1;
+}
+
+.portada-revista {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 3/4;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(26, 58, 42, 0.3);
+    margin: 0 auto;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+}
+
+.portada-revista:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(26, 58, 42, 0.4);
+}
+
+.imagen-portada-revista {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.revista-derecha {
+    flex: 1;
+}
+
+.revista-derecha h2 {
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: #1a3a2a;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.descripcion {
+    font-size: 18px;
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+.boton-explorar {
+    display: inline-block;
+    padding: 16px 45px;
+    background: #1a3a2a;
+    color: #faf8f5;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+    border: 1px solid #1a3a2a;
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-explorar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.boton-explorar:hover::before {
+    left: 100%;
+}
+
+.boton-explorar:hover {
+    background: transparent;
+    color: #1a3a2a;
+    transform: scale(1.03);
+    box-shadow: 0 8px 30px rgba(26, 58, 42, 0.2);
+}
+
+/* ---------- SECCIÓN 3: TURISMO COMUNITARIO ---------- */
+#turismo-comunitario {
+    padding: 100px 0;
+    background: #f0ebe4;
+}
+
+#turismo-comunitario h2 {
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: #1a3a2a;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.contenido-turismo {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contenido-turismo p {
+    font-size: 20px;
+    color: #3d3d3d;
+    line-height: 1.9;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+/* ---------- SECCIÓN 4: VOCES DEL TERRITORIO ---------- */
+#voces {
+    padding: 100px 0;
+    background: #faf6ef;
+}
+
+#voces h2 {
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: #1a3a2a;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.grid-voces {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* ---------- TARJETAS ---------- */
+.tarjeta {
+    background: #faf6ef;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e8ddd0;
+    transition: all 0.5s ease;
+    cursor: default;
+    position: relative;
+}
+
+.imagen-tarjeta {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.tarjeta:hover .imagen-tarjeta {
+    transform: scale(1.05);
+}
+
+.contenido-tarjeta {
+    padding: 25px 25px 30px;
+    text-align: center;
+}
+
+.tarjeta::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #c9a96e;
+    transition: width 0.5s ease;
+}
+
+.tarjeta:hover::after {
+    width: 40%;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    border-color: #c9a96e;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+}
+
+.icono-tarjeta {
+    font-size: 32px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.tarjeta h3 {
+    font-size: 22px;
+    color: #1a3a2a;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.tarjeta p {
+    font-size: 16px;
+    color: #5a5a5a;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    line-height: 1.6;
+}
+
+/* ---------- SECCIÓN 5: FOOTER (CON IMAGEN A TODO LO ANCHO) ---------- */
+footer {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2d5a3d 60%, #3d2a1a 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Imagen a todo lo ancho */
+.imagen-footer-full {
+    width: 100%;
+    height: 400px;
+    background: url('../img/footer-imagen.jpeg') center center / cover no-repeat;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.imagen-footer-full:hover {
+    transform: scale(1.02);
+}
+
+/* Contenedor del texto sobre fondo oscuro */
+footer .contenedor {
+    padding: 60px 40px 60px;
+    position: relative;
+    z-index: 1;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top center, rgba(201, 169, 110, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.frase-final {
+    font-size: 28px;
+    color: #faf8f5;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    position: relative;
+    z-index: 1;
+}
+
+.nombre-final {
+    font-size: 18px;
+    color: #c9a96e;
+    letter-spacing: 8px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+    #portada h1 {
+        font-size: 40px;
+    }
+    
+    #revista-comunitaria .contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .portada-revista {
+        max-width: 280px;
+    }
+    
+    .grid-voces {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cita-destacada {
+        padding: 25px 30px;
+    }
+
+    .imagen-footer-full {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    #portada h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+    
+    .subtitulo {
+        font-size: 14px;
+        letter-spacing: 4px;
+    }
+    
+    .frase {
+        font-size: 16px;
+    }
+    
+    .grid-voces {
+        grid-template-columns: 1fr;
+    }
+    
+    .frase-final {
+        font-size: 20px;
+    }
+
+    .cita-destacada blockquote {
+        font-size: 18px;
+    }
+
+    .flotante {
+        display: none;
+    }
+
+    .imagen-footer-full {
+        height: 200px;
+    }
+
+    footer .contenedor {
+        padding: 40px 20px 40px;
+    }
+}
